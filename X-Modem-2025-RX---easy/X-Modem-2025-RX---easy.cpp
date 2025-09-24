@@ -4,15 +4,15 @@
 using namespace std;
 
 // Steuerzeichen
-static const unsigned char SOH = 0x01; // Start Of Header
-static const unsigned char ETX = 0x03; // Padding
-static const unsigned char EOT = 0x04; // End Of Transmission
-static const unsigned char ACK = 0x06; // Acknowledge
-static const unsigned char NAK = 0x15; // No Acknowledge
+static const unsigned char SOH = 0x01; // Start Of Header // static const unsigned --> unveränderliche 8-Bit-Byte-Konstante (0..255) aber nur "char" geht auch
+char ETX = 0x03; // Padding
+char EOT = 0x04; // End Of Transmission
+char ACK = 0x06; // Acknowledge
+char NAK = 0x15; // No Acknowledge
 
 // Blocklayout (vereinfachte Übung)
 // | SOH | n | 255-n | Daten(5) | Checksum |
-//    1     1    1        5          1   = 9
+//    1     1    1        5          1      = 9
 static const int DATABYTES = 5;
 static const int BLOCKSIZE = 3 + DATABYTES + 1; // 9
 
